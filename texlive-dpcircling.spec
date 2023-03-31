@@ -1,6 +1,6 @@
 Name:		texlive-dpcircling
 Version:	54994
-Release:	1
+Release:	2
 Summary:	Decorated text boxes using TikZ
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/dpcircling
