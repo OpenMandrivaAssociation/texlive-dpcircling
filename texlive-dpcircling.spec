@@ -3,7 +3,7 @@ Version:	54994
 Release:	2
 Summary:	Decorated text boxes using TikZ
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/dpcircling
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/dpcircling
 License:	mit
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dpcircling.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dpcircling.doc.r%{version}.tar.xz
