@@ -1,42 +1,28 @@
-Name:		texlive-dpcircling
-Version:	54994
-Release:	2
+%global tl_name dpcircling
+%global tl_revision 54994
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.0
+Release:	%{tl_revision}.1
 Summary:	Decorated text boxes using TikZ
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/dpcircling
+URL:		https://www.ctan.org/tex-archive/graphics/pgf/contrib/dpcircling
 License:	mit
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dpcircling.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dpcircling.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/dpcircling.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/dpcircling.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This simple package provides four types of text decorations
-using TikZ. You can frame your text with circles, rectangles,
-jagged rectangles, and fan-shapes. The baseline will be
-adjusted properly according to the surroundings. You can use
-these decorations both in text mode and in math mode. You can
-specify line color, line width, width, and height using option
-keys. Note: The "DP" in the package name stands for "Decorated
-Packets".
+This simple package provides four types of text decorations using TikZ.
+You can frame your text with circles, rectangles, jagged rectangles, and
+fan-shapes. The baseline will be adjusted properly according to the
+surroundings. You can use these decorations both in text mode and in
+math mode. You can specify line color, line width, width, and height
+using option keys. Note: The "DP" in the package name stands for
+"Decorated Packets".
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/dpcircling
-%doc %{_texmfdistdir}/doc/latex/dpcircling
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
